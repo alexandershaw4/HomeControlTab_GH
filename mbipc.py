@@ -31,55 +31,17 @@ localfun = resource_path('view_ipcam.py')
 # CAMERAS
 @rumps.clicked('Back Camera')
 def print_something(_):
-	#os.system('python view_ipcam.py 0')
 	os.system('python ' + localfun + ' 0')
 
 
 @rumps.clicked('Front Camera')
 def print_something(_):
-	#os.system('python view_ipcam.py 1')
 	os.system('python ' + localfun + ' 1')
 
 # SOCKETS
-@rumps.clicked('Kettle')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleKettle.js')
-
 @rumps.clicked('Coffee')
 def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleCoffeeMaker.js')
-
-@rumps.clicked('Desk Lamp')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleDeskLamp.js')
-
-@rumps.clicked('Dining Lamp')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleDiningLamp.js')
-
-@rumps.clicked('Desk Twinkle')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleFairyLights.js')
-
-@rumps.clicked('Office Fan')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleFan.js')
-
-@rumps.clicked('Living Lamp')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleLivingRoomLamp.js')
-
-@rumps.clicked('Living Speakers')
-def print_something(_):
-    #os.system('python view_ipcam.py 1')
-    os.system('node ToggleSpeakers.js')
+    os.system('node ' + resource_path('ToggleCoffeeMaker.js'))
 
 
 @rumps.clicked('Quit')
@@ -88,7 +50,7 @@ def clean_up_before_quit(_):
     rumps.quit_application()
 
 
-app = rumps.App('IPC', menu=['Back Camera', 'Front Camera', 'Kettle', 'Coffee', 'Desk Lamp', 'Dining Lamp', 'Desk Twinkle', 'Office Fan', 'Living Lamp', 'Living Speakers', 'Quit'], quit_button=None)
+app = rumps.App('IPC', menu=['Back Camera', 'Front Camera', 'Coffee', 'Quit'], quit_button=None)
 app.run()
 
 
