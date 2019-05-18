@@ -15,3 +15,8 @@ Dependencies for the switch toggles:
 
 See ToggleCoffeeMaker.js for an example of toggling a tuya wifi switch on/off. 
 Note you need the key/id for each device.
+
+Launching:
+- I use a simple alias in my bash_profile to launch, e.g.
+
+alias ip_home='python ~/HomeControlTab/mbipc.py & disown'
